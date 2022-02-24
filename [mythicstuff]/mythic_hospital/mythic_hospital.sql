@@ -1,10 +1,15 @@
 INSERT INTO `items` (name, label, `limit`) VALUES
-	('gauze','Gauze', 25),
 	('bandage','Bandage', 25),
-	('firstaid','First-Aid Kit', 10),
-	('medkit','Medkit', 5),
-	('vicodin','Vicodin', 5),
-	('hydrocodone','Hydrocodone', 5),
-	('morphine','Morphine', 5),
-        ('adrenaline','Adrenaline', 5)
+	('firstaid','First-Aid Kit', 25),
+	('medkit','Medkit', 25),
+	('valium','Valium', 25),
+	('fentanyl','Fentanyl', 25),
+	('albuterol','Albuterol', 25),
+	('loratadine','Loratadine', 25),
+	('narcan','Narcan', 25),
+	('epinephrine','Epinephrine', 25),
+	('bolus','Bolus', 25),
+	('adenosine','Adenosine', 25),
+	('aspirin','Aspirin', 25),
+	('ondansetron','Ondansetron', 25),
 ;

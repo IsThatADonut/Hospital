@@ -646,6 +646,7 @@ end)
 --[[ Player Died Events ]]--
 
 
+    
 RegisterNetEvent('baseevents:onPlayerKilled')
 AddEventHandler('baseevents:onPlayerKilled', function(killedBy, data)
     TriggerEvent('mythic_hospital:client:ResetLimbs')

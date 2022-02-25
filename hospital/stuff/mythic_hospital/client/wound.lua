@@ -20,21 +20,21 @@ local bleedNotifId = 'MHOS_BLEED'
 local bleedMoveNotifId = 'MHOS_BLEEDMOVE'
 
 local BodyParts = {
-    ['HEAD'] = { label = 'Hoofd', causeLimp = false, isDamaged = false, severity = 0 },
-    ['NECK'] = { label = 'Nek', causeLimp = false, isDamaged = false, severity = 0 },
-    ['SPINE'] = { label = 'Wervelkolom', causeLimp = true, isDamaged = false, severity = 0 },
-    ['UPPER_BODY'] = { label = 'Bovenlichaam', causeLimp = false, isDamaged = false, severity = 0 },
-    ['LOWER_BODY'] = { label = 'Onderlichaam', causeLimp = true, isDamaged = false, severity = 0 },
-    ['LARM'] = { label = 'Linkerarm', causeLimp = false, isDamaged = false, severity = 0 },
-    ['LHAND'] = { label = 'Linkerhand', causeLimp = false, isDamaged = false, severity = 0 },
-    ['LFINGER'] = { label = 'Linkerhand vingers', causeLimp = false, isDamaged = false, severity = 0 },
-    ['LLEG'] = { label = 'Linkerbeen', causeLimp = true, isDamaged = false, severity = 0 },
-    ['LFOOT'] = { label = 'Linker voet', causeLimp = true, isDamaged = false, severity = 0 },
-    ['RARM'] = { label = 'Rechter arm', causeLimp = false, isDamaged = false, severity = 0 },
-    ['RHAND'] = { label = 'Rechter hand', causeLimp = false, isDamaged = false, severity = 0 },
-    ['RFINGER'] = { label = 'Rechterhand vingers', causeLimp = false, isDamaged = false, severity = 0 },
-    ['RLEG'] = { label = 'Rechter been', causeLimp = true, isDamaged = false, severity = 0 },
-    ['RFOOT'] = { label = 'Rechter voet', causeLimp = true, isDamaged = false, severity = 0 },
+    ['HEAD'] = { label = 'Head', causeLimp = false, isDamaged = false, severity = 0 },
+    ['NECK'] = { label = 'Neck', causeLimp = false, isDamaged = false, severity = 0 },
+    ['SPINE'] = { label = 'Spine', causeLimp = true, isDamaged = false, severity = 0 },
+    ['UPPER_BODY'] = { label = 'Upper body', causeLimp = false, isDamaged = false, severity = 0 },
+    ['LOWER_BODY'] = { label = 'Lower body', causeLimp = true, isDamaged = false, severity = 0 },
+    ['LARM'] = { label = 'Left arm', causeLimp = false, isDamaged = false, severity = 0 },
+    ['LHAND'] = { label = 'Left hand', causeLimp = false, isDamaged = false, severity = 0 },
+    ['LFINGER'] = { label = 'Left fingers', causeLimp = false, isDamaged = false, severity = 0 },
+    ['LLEG'] = { label = 'Left leg', causeLimp = true, isDamaged = false, severity = 0 },
+    ['LFOOT'] = { label = 'Left foot', causeLimp = true, isDamaged = false, severity = 0 },
+    ['RARM'] = { label = 'Right arm', causeLimp = false, isDamaged = false, severity = 0 },
+    ['RHAND'] = { label = 'Right hand', causeLimp = false, isDamaged = false, severity = 0 },
+    ['RFINGER'] = { label = 'Right finger', causeLimp = false, isDamaged = false, severity = 0 },
+    ['RLEG'] = { label = 'Right leg', causeLimp = true, isDamaged = false, severity = 0 },
+    ['RFOOT'] = { label = 'Right foot', causeLimp = true, isDamaged = false, severity = 0 },
 }
 
 local injured = {}
@@ -95,7 +95,7 @@ function ProcessRunStuff(ped)
         if wasOnPainKillers then
             SetPedToRagdoll(ped, 1500, 2000, 3, true, true, false)
             wasOnPainKillers = false
-            exports['mythic_notify']:SendAlert('inform', 'U beseft dat het gebruik van medicijnen niet al uw problemen oplost', 5000, { ['background-color'] = '#760036' })
+            exports['mythic_notify']:SendAlert('inform', [['You realize that taking drugs won't solve all your problems']], 5000, { ['background-color'] = '#760036' })
         end
     else
         SetPedMoveRateOverride(ped, 1.0)
@@ -118,13 +118,13 @@ function ProcessDamage(ped)
                         local chance = math.random(100)
                         if (IsPedRunning(ped) or IsPedSprinting(ped)) then
                             if chance <= Config.LegInjuryChance.Running then
-                                exports['mythic_notify']:SendAlert('inform', 'Je hebt het moeilijk om te rennen', 5000, { ['background-color'] = '#760036' })
+                                exports['mythic_notify']:SendAlert('inform', [['You have a hard time running']], 5000, { ['background-color'] = '#760036' })
                                 ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.08) -- change this float to increase/decrease camera shake
                                 SetPedToRagdollWithFall(ped, 1500, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
                             end
                         else
                             if chance <= Config.LegInjuryChance.Walking then
-                                exports['mythic_notify']:SendAlert('inform', 'Je hebt moeite om je benen te gebruiken', 5000, { ['background-color'] = '#760036' })
+                                exports['mythic_notify']:SendAlert('inform', [['You have trouble using your legs]]', 5000, { ['background-color'] = '#760036' })
                                 ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.08) -- change this float to increase/decrease camera shake
                                 SetPedToRagdollWithFall(ped, 1500, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
                             end
@@ -181,7 +181,7 @@ function ProcessDamage(ped)
                     local chance = math.random(100)
 
                     if chance <= Config.HeadInjuryChance then
-                        exports['mythic_notify']:SendAlert('inform', 'U heeft een Black Out', 5000, { ['background-color'] = '#760036' })
+                        exports['mythic_notify']:SendAlert('inform', [['You've blacked out']], 5000, { ['background-color'] = '#760036' })
                         SetFlash(0, 0, 100, 10000, 100)
 
                         DoScreenFadeOut(100)
@@ -207,7 +207,7 @@ function ProcessDamage(ped)
         if wasOnDrugs then
             SetPedToRagdoll(ped, 1500, 2000, 3, true, true, false)
             wasOnDrugs = false
-            exports['mythic_notify']:SendAlert('inform', 'U beseft dat het gebruik van medicijnen niet al uw problemen oplost', 5000, { ['background-color'] = '#760036' })
+            exports['mythic_notify']:SendAlert('inform', [['You realize that taking drugs doesn't solve all your problems']], 5000, { ['background-color'] = '#760036' })
         end
     else
         onDrugs = onDrugs - 1
@@ -345,7 +345,7 @@ function CheckDamage(ped, bone, weapon)
             DoBleedAlert()
         end
     else
-        print('Bone Not In Index - Report This! - ' .. bone)
+        print([['Bone Not In Index - Report This! - ']] .. bone)
     end
 end
 
@@ -366,15 +366,15 @@ function DoLimbAlert()
             local limbDamageMsg = ''
             if #injured > 1 and #injured < 3 then
                 for k, v in pairs(injured) do
-                    limbDamageMsg = limbDamageMsg .. 'Uw ' .. v.label .. ' voelt ' .. Config.WoundStates[v.severity]
+                    limbDamageMsg = limbDamageMsg .. 'Your ' .. v.label .. ' feels ' .. Config.WoundStates[v.severity]
                     if k < #injured then
                         limbDamageMsg = limbDamageMsg .. ' | '
                     end
                 end
             elseif #injured > 2 then
-                limbDamageMsg = 'Je voelt meerdere pijnen'
+                limbDamageMsg = [['You feel ']]
             else
-                limbDamageMsg = 'Uw ' .. injured[1].label .. ' voelt ' .. Config.WoundStates[injured[1].severity]
+                limbDamageMsg = 'Your ' .. injured[1].label .. ' feels ' .. Config.WoundStates[injured[1].severity]
             end
 
             exports['mythic_notify']:PersistentAlert('start', limbNotifId, 'inform', limbDamageMsg, { ['background-color'] = '#760036' })
@@ -389,7 +389,7 @@ end
 function DoBleedAlert()
     local player = PlayerPedId()
     if not IsEntityDead(player) and isBleeding > 0 then
-        exports['mythic_notify']:PersistentAlert('start', bleedNotifId, 'inform', 'U heeft ' .. Config.BleedingStates[isBleeding], { ['background-color'] = '#760036' })
+        exports['mythic_notify']:PersistentAlert('start', bleedNotifId, 'inform', 'You have ' .. Config.BleedingStates[isBleeding], { ['background-color'] = '#760036' })
     else
         exports['mythic_notify']:PersistentAlert('end', bleedNotifId)
     end
@@ -489,7 +489,7 @@ AddEventHandler('mythic_hospital:client:UsePainKiller', function(tier)
         onPainKiller = 90 * tier
     end
 
-    exports['mythic_notify']:SendAlert('inform', 'Je voelt de pijn tijdelijk weg gaan ', 5000)
+    exports['mythic_notify']:SendAlert('inform', [['You feel the pain temporarily go away ']], 5000)
     ProcessRunStuff(PlayerPedId())
 end)
 
@@ -499,7 +499,7 @@ AddEventHandler('mythic_hospital:client:UseAdrenaline', function(tier)
         onDrugs = 180 * tier
     end
 
-    exports['mythic_notify']:SendAlert('inform', 'Je bent in staat je lichaam te negeren als het niet lukt', 5000)
+    exports['mythic_notify']:SendAlert('inform', [['You are able to supress the pain for now']], 5000)
     ProcessRunStuff(PlayerPedId())
 end)
 
@@ -578,7 +578,7 @@ Citizen.CreateThread(function()
                 local currPos = GetEntityCoords(player, true)
                 local moving = #(vector2(prevPos.x, prevPos.y) - vector2(currPos.x, currPos.y))
                 if (moving > 1 and not IsPedInAnyVehicle(player)) and isBleeding > 2 then
-                    exports['mythic_notify']:PersistentAlert('start', bleedMoveNotifId, 'inform', 'Je merkt dat bloed sneller uit je wonden sijpelt wanneer je beweegt', { ['background-color'] = '#4d0e96' })
+                    exports['mythic_notify']:PersistentAlert('start', bleedMoveNotifId, 'inform', [['You're losing blood faster when you move around']], { ['background-color'] = '#4d0e96' })
                     advanceBleedTimer = advanceBleedTimer + Config.BleedMovementAdvance
                     bleedTickTimer = bleedTickTimer + Config.BleedMovementTick
                     prevPos = currPos
@@ -646,6 +646,7 @@ end)
 --[[ Player Died Events ]]--
 
 
+    
 RegisterNetEvent('baseevents:onPlayerKilled')
 AddEventHandler('baseevents:onPlayerKilled', function(killedBy, data)
     TriggerEvent('mythic_hospital:client:ResetLimbs')

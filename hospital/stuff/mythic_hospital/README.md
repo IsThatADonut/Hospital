@@ -21,12 +21,17 @@ DRUGS:
 - Asprin
 - Ondansetron
 
+Items: 
+- First Aid kit
+- Bandages
+
 LICENSES:
 - Paramedic license (To administer drugs)
 
 MECHANICS:
 - Bleeding out
 - Increased bleed "damage" when moving during bleeding
+- Administering drugs with emotes and items & emotes when performing healing using First Aid Kits and Bandages.
 
 BODYPARTS: 
 - Head

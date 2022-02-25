@@ -526,7 +526,7 @@ Citizen.CreateThread(function()
 
                     if fadeOutTimer % Config.FadeOutTimer == 0 then
                         if blackoutTimer >= Config.BlackoutTimer then
-                            exports['mythic_notify']:SendAlert('inform', 'You Suddenly Black Out', 5000)
+                            exports['mythic_notify']:SendAlert('inform', 'You black out due to your injuries', 5000)
                             SetFlash(0, 0, 100, 7000, 100)
 
                             DoScreenFadeOut(500)
@@ -578,7 +578,7 @@ Citizen.CreateThread(function()
                 local currPos = GetEntityCoords(player, true)
                 local moving = #(vector2(prevPos.x, prevPos.y) - vector2(currPos.x, currPos.y))
                 if (moving > 1 and not IsPedInAnyVehicle(player)) and isBleeding > 2 then
-                    exports['mythic_notify']:PersistentAlert('start', bleedMoveNotifId, 'inform', [['You're losing blood faster when you move around']], { ['background-color'] = '#4d0e96' })
+                    exports['mythic_notify']:PersistentAlert('start', bleedMoveNotifId, 'inform', [['You're losing blood faster when you move']], { ['background-color'] = '#4d0e96' })
                     advanceBleedTimer = advanceBleedTimer + Config.BleedMovementAdvance
                     bleedTickTimer = bleedTickTimer + Config.BleedMovementTick
                     prevPos = currPos

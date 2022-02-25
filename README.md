@@ -3,4 +3,4 @@ Just my attempt at re-learning UML since I havn't used it for a while. The proje
 
 
 # The Fuck Zone
-Is the pull request where I modify the GTA V script to the server needs.
+Is the branch where I modify the GTA V script to the server needs.

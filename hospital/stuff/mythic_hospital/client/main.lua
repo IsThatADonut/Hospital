@@ -1,6 +1,6 @@
 local hospitalCheckin = { x = 308.06161499023, y = -595.19683837891, z = 43.291839599609, h = 180.4409942627 }
 local pillboxTeleports = {
-    { x = 325.48892211914, y = -598.75372314453, z = 43.291839599609, h = 64.513374328613, text = 'Press ~INPUT_CONTEXT~ ~s~to go to lower Pillbox Entrance' },
+    { x = 325.48892211914, y = -598.75372314453, z = 43.291839599609, h = 64.513374328613, text = 'Press ~INPUT_CONTEXT~ ~s~to go to Jackson Memorial' },
     { x = 355.47183227539, y = -596.26495361328, z = 28.773477554321, h = 245.85662841797, text = 'Press ~INPUT_CONTEXT~ ~s~to enter Pillbox Hospital' },
     { x = 359.57849121094, y = -584.90911865234, z = 28.817169189453, h = 245.85662841797, text = 'Press ~INPUT_CONTEXT~ ~s~to enter Pillbox Hospital' },
 }
@@ -43,7 +43,7 @@ function LeaveBed()
 
     SetEntityHeading(PlayerPedId(), bedOccupyingData.h - 90)
     TaskPlayAnim(PlayerPedId(), getOutDict , getOutAnim ,8.0, -8.0, -1, 0, 0, false, false, false )
-    Citizen.Wait(5000)
+    Citizen.Wait(150)
     ClearPedTasks(PlayerPedId())
     FreezeEntityPosition(PlayerPedId(), false)
     TriggerServerEvent('mythic_hospital:server:LeaveBed', bedOccupying)
@@ -91,7 +91,7 @@ AddEventHandler('mythic_hospital:client:RPSendToBed', function(id, data)
     Citizen.CreateThread(function()
         while bedOccupyingData ~= nil do
             Citizen.Wait(1)
-            PrintHelpText('Druk ~INPUT_VEH_DUCK~ op op te staan')
+            PrintHelpText('Press ~INPUT_VEH_DUCK~ to get out of bed')
             if IsControlJustReleased(0, 73) then
                 LeaveBed()
             end
@@ -127,7 +127,7 @@ AddEventHandler('mythic_hospital:client:SendToBed', function(id, data)
         Citizen.Wait(5)
         local player = PlayerPedId()
 
-        exports['mythic_notify']:SendAlert('inform', 'Artsen behandelen je.')
+        exports['mythic_notify']:SendAlert('inform', 'Doctors are treating you.')
         Citizen.Wait(Config.AIHealTimer * 1000)
         TriggerServerEvent('mythic_hospital:server:EnteredBed')
     end)
@@ -148,7 +148,7 @@ AddEventHandler('mythic_hospital:client:FinishServices', function()
     TriggerEvent('mythic_hospital:client:RemoveBleed')
     TriggerEvent('mythic_hospital:client:ResetLimbs')
     TriggerEvent('esx_ambulancejob:revive')
-    exports['mythic_notify']:SendAlert('inform', 'U bent behandeld en gefactureerd.')
+    exports['mythic_notify']:SendAlert('inform', 'You have been treated and billed.')
     LeaveBed()
 end)
 
@@ -173,7 +173,7 @@ Citizen.CreateThread(function()
                         if (GetEntityHealth(PlayerPedId()) < 200) or (IsInjuredOrBleeding()) then
 							TriggerServerEvent('mythic_hospital:server:RequestBed')
 						else
-							exports['mythic_notify']:DoHudText('error', 'U heeft geen medische hulp nodig')
+							exports['mythic_notify']:DoHudText('error', [['You don't need medical help']])
 						end
 					end
 				end

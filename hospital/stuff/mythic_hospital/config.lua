@@ -86,17 +86,17 @@ Config.WeaponClasses = {
 }
 
 Config.WoundStates = {
-    'Geërgerd',
-    'Tamelijk pijnlijk',
-    'Zeer pijnlijk',
-    'Ondraaglijk pijnlijk',
+    'Irritated',
+    'Quite painful',
+    'Very painful',
+    'Unbearably painful',
 }
 
 Config.BleedingStates = {
-    'Kleine bloedingen',
-    'Aanzienlijke bloeding',
-    'Grote bloeding',
-    'Extreem bloeden',
+    'Minor bleed',
+    'Significant bleed',
+    'Major bleed',
+    'Extreme bleed',
 }
 
 Config.MovementRate = {
@@ -238,17 +238,12 @@ Config.Weapons = {
     [`WEAPON_SWITCHBLADE`] = Config.WeaponClasses['CUTTING'],
 
     --[[ Light Impact ]]--
-    --[`WEAPON_GARBAGEBAG`] = Config.WeaponClasses['LIGHT_IMPACT'], -- Garbage Bag
-    --[`WEAPON_BRIEFCASE`] = Config.WeaponClasses['LIGHT_IMPACT'], -- Briefcase
-    --[`WEAPON_BRIEFCASE_02`] = Config.WeaponClasses['LIGHT_IMPACT'], -- Briefcase 2
-    --[`WEAPON_BALL`] = Config.WeaponClasses['LIGHT_IMPACT'],
-    --[`WEAPON_FLASHLIGHT`] = Config.WeaponClasses['LIGHT_IMPACT'],
+
+    [`WEAPON_FLASHLIGHT`] = Config.WeaponClasses['LIGHT_IMPACT'],
     [`WEAPON_KNUCKLE`] = Config.WeaponClasses['LIGHT_IMPACT'],
-    --[`WEAPON_NIGHTSTICK`] = Config.WeaponClasses['LIGHT_IMPACT'],
-    --[`WEAPON_SNOWBALL`] = Config.WeaponClasses['LIGHT_IMPACT'],
-    --[`WEAPON_UNARMED`] = Config.WeaponClasses['LIGHT_IMPACT'],
-    --[`WEAPON_PARACHUTE`] = Config.WeaponClasses['LIGHT_IMPACT'],
-    --[`WEAPON_NIGHTVISION`] = Config.WeaponClasses['LIGHT_IMPACT'],
+    [`WEAPON_NIGHTSTICK`] = Config.WeaponClasses['LIGHT_IMPACT'],
+    [`WEAPON_SNOWBALL`] = Config.WeaponClasses['LIGHT_IMPACT'],
+    [`WEAPON_UNARMED`] = Config.WeaponClasses['LIGHT_IMPACT'],
     
     --[[ Heavy Impact ]]--
     [`WEAPON_BAT`] = Config.WeaponClasses['HEAVY_IMPACT'],

@@ -50,7 +50,7 @@ BODYPARTS:
 - Right leg
 - Right foot
 
-# Nice to have / To be added
+# Potentially
 
 - Production of above drugs
 - Make it illegal for civs/unlicensed to carry said drugs
@@ -60,3 +60,5 @@ BODYPARTS:
     - e.g. Press [E] to administer morphine to patient
     - e.g. Patients finger is broken, press [E] to add a splint
     - e.g. You are currently bleeding out press [E] to call EMS, or seek medical treatment soon
+- Allow for EMS to check the status of downed Peds to start treatment
+- Implement hospital beds as part of the treatment and ensure that they remove side effects

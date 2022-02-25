@@ -121,6 +121,8 @@ AddEventHandler("mythic_hospital:items:medkit", function(item)
     end)
 end)
 
+
+#####################
 RegisterNetEvent("mythic_hospital:items:vicodin")
 AddEventHandler("mythic_hospital:items:vicodin", function(item)
     exports['mythic_progbar']:Progress({
@@ -213,6 +215,198 @@ AddEventHandler("mythic_hospital:items:morphine", function(item)
     }, function(cancelled)
         if not cancelled then
             TriggerEvent('mythic_hospital:client:UsePainKiller', 6)
+        end
+    end)
+end)
+
+RegisterNetEvent("mythic_hospital:items:adrenaline")
+AddEventHandler("mythic_hospital:items:adrenaline", function(item)
+    exports['mythic_progbar']:Progress({
+        name = "adrenaline_action",
+        duration = 2000,
+        label = "Taking Adrenaline...",
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "mp_suicide",
+            anim = "pill",
+            flags = 49,
+        },
+        prop = {
+            model = "prop_cs_pills",
+            bone = 58866,
+            coords = { x = 0.1, y = 0.0, z = 0.001 },
+            rotation = { x = -60.0, y = 0.0, z = 0.0 },
+        },
+    }, function(cancelled)
+        if not cancelled then
+            TriggerEvent('mythic_hospital:client:UseAdrenaline', 4)
+        end
+    end)
+end)
+
+RegisterNetEvent("mythic_hospital:items:adrenaline")
+AddEventHandler("mythic_hospital:items:adrenaline", function(item)
+    exports['mythic_progbar']:Progress({
+        name = "adrenaline_action",
+        duration = 2000,
+        label = "Taking Adrenaline...",
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "mp_suicide",
+            anim = "pill",
+            flags = 49,
+        },
+        prop = {
+            model = "prop_cs_pills",
+            bone = 58866,
+            coords = { x = 0.1, y = 0.0, z = 0.001 },
+            rotation = { x = -60.0, y = 0.0, z = 0.0 },
+        },
+    }, function(cancelled)
+        if not cancelled then
+            TriggerEvent('mythic_hospital:client:UseAdrenaline', 4)
+        end
+    end)
+end)
+
+RegisterNetEvent("mythic_hospital:items:vicodin")
+AddEventHandler("mythic_hospital:items:vicodin", function(item)
+    exports['mythic_progbar']:Progress({
+        name = "firstaid_action",
+        duration = 1000,
+        label = "Taking " .. item.label,
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "mp_suicide",
+            anim = "pill",
+            flags = 49,
+        },
+        prop = {
+            model = "prop_cs_pills",
+            bone = 58866,
+            coords = { x = 0.1, y = 0.0, z = 0.001 },
+            rotation = { x = -60.0, y = 0.0, z = 0.0 },
+        },
+    }, function(cancelled)
+        if not cancelled then
+            TriggerEvent('mythic_hospital:client:UsePainKiller', 1)
+        end
+    end)
+end)
+
+RegisterNetEvent("mythic_hospital:items:hydrocodone")
+AddEventHandler("mythic_hospital:items:hydrocodone", function(item)
+    exports['mythic_progbar']:Progress({
+        name = "firstaid_action",
+        duration = 1000,
+        label = "Taking " .. item.label,
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "mp_suicide",
+            anim = "pill",
+            flags = 49,
+        },
+        prop = {
+            model = "prop_cs_pills",
+            bone = 58866,
+            coords = { x = 0.1, y = 0.0, z = 0.001 },
+            rotation = { x = -60.0, y = 0.0, z = 0.0 },
+        },
+    }, function(cancelled)
+        if not cancelled then
+            TriggerEvent('mythic_hospital:client:UsePainKiller', 2)
+        end
+    end)
+end)
+
+RegisterNetEvent("mythic_hospital:items:morphine")
+AddEventHandler("mythic_hospital:items:morphine", function(item)
+    exports['mythic_progbar']:Progress({
+        name = "firstaid_action",
+        duration = 2000,
+        label = "Taking " .. item.label,
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "mp_suicide",
+            anim = "pill",
+            flags = 49,
+        },
+        prop = {
+            model = "prop_cs_pills",
+            bone = 58866,
+            coords = { x = 0.1, y = 0.0, z = 0.001 },
+            rotation = { x = -60.0, y = 0.0, z = 0.0 },
+        },
+    }, function(cancelled)
+        if not cancelled then
+            TriggerEvent('mythic_hospital:client:UsePainKiller', 6)
+        end
+    end)
+end)
+
+RegisterNetEvent("mythic_hospital:items:adrenaline")
+AddEventHandler("mythic_hospital:items:adrenaline", function(item)
+    exports['mythic_progbar']:Progress({
+        name = "adrenaline_action",
+        duration = 2000,
+        label = "Taking Adrenaline...",
+        useWhileDead = false,
+        canCancel = true,
+        controlDisables = {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+        },
+        animation = {
+            animDict = "mp_suicide",
+            anim = "pill",
+            flags = 49,
+        },
+        prop = {
+            model = "prop_cs_pills",
+            bone = 58866,
+            coords = { x = 0.1, y = 0.0, z = 0.001 },
+            rotation = { x = -60.0, y = 0.0, z = 0.0 },
+        },
+    }, function(cancelled)
+        if not cancelled then
+            TriggerEvent('mythic_hospital:client:UseAdrenaline', 4)
         end
     end)
 end)

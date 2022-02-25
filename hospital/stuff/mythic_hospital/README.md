@@ -6,4 +6,54 @@ This is a lightweight hosptial & limb damage resource. This was largely done as 
 Dependencies:
 - [Mythic Notify](https://github.com/mythicrp/mythic_notify)
 - [Mythic Progress Bar](https://github.com/mythicrp/mythic_progbar)
-- [Pillbox Interior](https://forum.fivem.net/t/release-pillbox-hospital-by-jobscraft/209288)
+
+# This Script adds:
+
+DRUGS:
+- Valium
+- Fentanyl
+- Morphine
+- Albuterol
+- Loratadine
+- Narcan
+- Epinephrine
+- Bolus
+- Adenosine
+- Asprin
+- Ondansetron
+
+LICENSES:
+- Paramedic license (To administer drugs)
+
+MECHANICS:
+- Bleeding out
+- Increased bleed "damage" when moving during bleeding
+
+BODYPARTS: 
+- Head
+- Neck
+- Spine
+- Upper body
+- Lower body
+- Left arm
+- Left hand
+- Left finger
+- Left leg
+- Left foot
+- Right arm
+- Right hand
+- Right fingers
+- Right leg
+- Right foot
+
+# Nice to have / To be added
+
+- Production of above drugs
+- Make it illegal for civs/unlicensed to carry said drugs
+- Interaction during treatment of wounds by either Civs or Police/EMT
+    - e.g. Press [E] to perform initial accessment 
+    - e.g. Press [E] to treat gunshot wound to lower body
+    - e.g. Press [E] to administer morphine to patient
+    - e.g. Patients finger is broken, press [E] to add a splint
+    - e.g. You are currently bleeding out press [E] to call EMS, or seek medical treatment soon
+- 

@@ -60,4 +60,3 @@ BODYPARTS:
     - e.g. Press [E] to administer morphine to patient
     - e.g. Patients finger is broken, press [E] to add a splint
     - e.g. You are currently bleeding out press [E] to call EMS, or seek medical treatment soon
-- 

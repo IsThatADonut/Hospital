@@ -96,10 +96,10 @@ function Process(action, start, tick, finish)
                 end
             end)
         else
-            exports['mythic_notify']:SendAlert('error', 'Already Doing An Action', 1000)
+            exports['mythic_notify']:SendAlert('error', 'Already doing an action', 1000)
         end
     else
-        exports['mythic_notify']:SendAlert('error', 'Cannot Perform An Action While Dead', 1000)
+        exports['mythic_notify']:SendAlert('error', 'Cannot perform an action while dead', 1000)
     end
 end
 

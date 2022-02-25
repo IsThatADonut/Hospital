@@ -1,8 +1,7 @@
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
-name 'Mythic Framework Progress Bar'
-author 'Alzar - https://github.com/Alzar'
+name 'Framework Progress Bar'
+author 'IsThatADonut - Donut#8401'
 version 'v1.0.1'
 
 ui_page('html/index.html') 

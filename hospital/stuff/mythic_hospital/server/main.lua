@@ -37,7 +37,7 @@ AddEventHandler('mythic_hospital:server:RequestBed', function()
         end
     end
 
-    TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Geen bedden beschikbaar.' })
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'No beds available.' })
 end)
 
 RegisterServerEvent('mythic_hospital:server:RPRequestBed')
@@ -52,13 +52,13 @@ AddEventHandler('mythic_hospital:server:RPRequestBed', function(plyCoords)
                 TriggerClientEvent('mythic_hospital:client:RPSendToBed', source, k, v)
                 return
             else
-                TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'Dit bed is bezet.' })
+                TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'This bed is occupied' })
             end
         end
     end
 
     if not foundbed then
-        TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'U bevindt zich niet in de buurt van een ziekenhuisbed.' })
+        TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You are not near a hospital bed.' })
     end
 end)
 
@@ -83,7 +83,7 @@ AddEventHandler('mythic_hospital:server:EnteredBed', function()
 
     -- YOU NEED TO IMPLEMENT YOUR FRAMEWORKS BILLING HERE
 	local xPlayer = ESX.GetPlayerFromId(src)
-    TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'U bent gefactureerd voor €' .. totalBill ..'.' })
+    TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'success', text = 'You have been billed' .. totalBill ..'.' })
     TriggerClientEvent('mythic_hospital:client:FinishServices', src)
 end)
 

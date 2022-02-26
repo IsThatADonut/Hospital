@@ -50,7 +50,51 @@ BODYPARTS:
 - Right leg
 - Right foot
 
-# Potentially
+# Treatment emote/actions to be added for EMS on duty players
+(Source for treatment examples: https://doh.sd.gov/documents/EMS/EMT-BasicGuidelines.pdf)
+- Perform initial accessment (Get information from /status) <- This needs to be reworked with the new bodyparts from above)
+**Stop bleeding**
+- Apply tourniquet
+- Apply bandage
+- Apply bandaid
+
+**Broken Limb**
+- Immobilize the injured area
+- Apply ice packs to limit swelling and help relieve pain.
+
+**Mild vehicle accident**
+- Check for bleeding
+- Apply bandage
+- Apply neck brace
+
+**Severe vehicle accident**
+- Apply neck brace
+- Check airways and breathing patterns
+- Check pulse
+- DCAP-BTLS
+    - D: Deformities
+    - C: Contusions
+    - A: Abrasions    
+    - P: Punctures/Penetrations
+    - B: Burns
+    - T: Tenderness
+    - L: Lacerations
+    - S: Swelling
+
+
+- 
+- Administer sedative, antibiotics or pain relievers
+- Apply bandage
+- Apply neckbrace
+- Monitor Vitals / Apply EKG
+- Check pulse
+- Stop bleeding (Sowing/
+- Remove bullet
+- Drain fluids
+
+
+
+# Optional items to add
 
 - Production of above drugs
 - Make it illegal for civs/unlicensed to carry said drugs
@@ -62,3 +106,9 @@ BODYPARTS:
     - e.g. You are currently bleeding out press [E] to call EMS, or seek medical treatment soon
 - Allow for EMS to check the status of downed Peds to start treatment
 - Implement hospital beds as part of the treatment and ensure that they remove side effects
+
+
+
+
+
+

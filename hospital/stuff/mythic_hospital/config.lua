@@ -101,9 +101,9 @@ Config.BleedingStates = {
 
 Config.MovementRate = {
     0.98,
-    0.96,
-    0.94,
-    0.92,
+    0.85,
+    0.72,
+    0.50,
 }
 
 Config.Bones = {

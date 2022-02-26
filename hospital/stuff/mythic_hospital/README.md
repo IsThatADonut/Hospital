@@ -82,7 +82,7 @@ BODYPARTS:
     - S: Swelling
 
 
-- 
+Additional ideas.
 - Administer sedative, antibiotics or pain relievers
 - Apply bandage
 - Apply neckbrace
@@ -91,7 +91,6 @@ BODYPARTS:
 - Stop bleeding (Sowing/
 - Remove bullet
 - Drain fluids
-
 
 
 # Optional items to add
